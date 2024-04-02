@@ -3,6 +3,7 @@ import 'package:bookly/Features/home/presentation/views/widgets/featured_list_vi
 import 'package:bookly/core/utils/asstes.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeviewBody extends StatelessWidget {
   const HomeviewBody({super.key});
@@ -10,7 +11,7 @@ class HomeviewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24),
+      padding: EdgeInsets.symmetric(horizontal:30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -18,6 +19,7 @@ class HomeviewBody extends StatelessWidget {
           FeatureedBookListView(),
           SizedBox(height: 50,),
           Text("Best Seller",style: Styles.textstyle18),
+          SizedBox(height: 20,),
           BestSelerListViewItem()
       ],),
     );
@@ -47,6 +49,12 @@ class BestSelerListViewItem extends StatelessWidget {
              ))
           ),
         ),
+      const  SizedBox(width: 30,),
+         Column(children: [
+          SizedBox(
+            width: MediaQuery.of(context).size.width * .5,
+            child:const Text("Harry Potter and the Goblet of Fire ",style: Styles.textstyle20,maxLines: 2,overflow: TextOverflow.ellipsis,))
+        ],)
       ],),
     );
   }
