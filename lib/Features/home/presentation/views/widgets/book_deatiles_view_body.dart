@@ -1,4 +1,5 @@
 import 'package:bookly/Features/home/presentation/views/widgets/book_Rating.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/books_action.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_list_View_item.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/cutom_deatiles_app_bar.dart';
 import 'package:bookly/core/utils/styles.dart';
@@ -28,7 +29,9 @@ class BookDeatilesViewBody extends StatelessWidget {
         opacity: .7,
         child: Text('Rudyard Kip',style: Styles.textstyle16.copyWith(fontStyle: FontStyle.italic) ,)),
         const SizedBox(height: 18,),
-      const  BookRating(mainAxisAlignment: MainAxisAlignment.center,)
+      const  BookRating(mainAxisAlignment: MainAxisAlignment.center,),
+     const SizedBox(height: 37,),
+      const BooksAction()
       ],),
     );
   }
