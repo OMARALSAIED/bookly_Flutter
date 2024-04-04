@@ -1,10 +1,12 @@
 import 'package:bookly/Features/home/presentation/views/widgets/book_Rating.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/books_action.dart';
-import 'package:bookly/Features/home/presentation/views/widgets/custom_list_View_item.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/books_similer_list_view.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/cutom_deatiles_app_bar.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 
@@ -30,8 +32,16 @@ class BookDeatilesViewBody extends StatelessWidget {
         child: Text('Rudyard Kip',style: Styles.textstyle16.copyWith(fontStyle: FontStyle.italic) ,)),
         const SizedBox(height: 18,),
       const  BookRating(mainAxisAlignment: MainAxisAlignment.center,),
-     const SizedBox(height: 37,),
-      const BooksAction()
+     const SizedBox(height: 30,),
+      const BooksAction(),
+      const SizedBox(height: 35,),
+      Align(
+        
+        alignment: Alignment.centerLeft,
+        child: Text('You can also like',style:Styles.textstyle14.copyWith(fontWeight: FontWeight.w600) ,)),
+        const SizedBox(height: 16,),
+        const SimilaerBookListView(),
+        
       ],),
     );
   }
