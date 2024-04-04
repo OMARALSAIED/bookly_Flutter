@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/presentation/views/widgets/book_Rating.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_list_View_item.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/cutom_deatiles_app_bar.dart';
 import 'package:bookly/core/utils/styles.dart';
@@ -13,7 +14,7 @@ class BookDeatilesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     var width=MediaQuery.of(context).size.width;
     return  Padding(
-      padding:  EdgeInsets.symmetric(horizontal:20,vertical: 15),
+      padding:const  EdgeInsets.symmetric(horizontal:20,vertical: 15),
       child: Column(children: [
         const  CustomAppbarBookDeatiles(),
          Padding(
@@ -22,10 +23,12 @@ class BookDeatilesViewBody extends StatelessWidget {
          ),
          const SizedBox(height: 43,),
       const  Text('The Jungel Book',style: Styles.textstyle30,),
-      SizedBox(height: 6,),
+     const SizedBox(height: 6,),
       Opacity(
         opacity: .7,
-        child: Text('Rudyard Kip',style: Styles.textstyle16.copyWith(fontStyle: FontStyle.italic) ,))
+        child: Text('Rudyard Kip',style: Styles.textstyle16.copyWith(fontStyle: FontStyle.italic) ,)),
+        const SizedBox(height: 18,),
+      const  BookRating(mainAxisAlignment: MainAxisAlignment.center,)
       ],),
     );
   }
