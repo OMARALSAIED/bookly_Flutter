@@ -8,27 +8,28 @@ class ReatingSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-         const BookRating(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                const BooksAction(),
-                const SizedBox(
-                  height: 35,
-                ),
-                Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'You can also like',
-                      style: Styles.textstyle14
-                          .copyWith(fontWeight: FontWeight.w600),
-                    )),
-                const SizedBox(
-                  height: 16,
-                ),
-    ],);
+    return Column(
+      children: [
+        const BookRating(
+          mainAxisAlignment: MainAxisAlignment.center,
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        const BooksAction(),
+        const SizedBox(
+          height: 35,
+        ),
+        Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like',
+              style: Styles.textstyle14.copyWith(fontWeight: FontWeight.w600),
+            )),
+        const SizedBox(
+          height: 16,
+        ),
+      ],
+    );
   }
 }

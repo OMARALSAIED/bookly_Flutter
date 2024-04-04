@@ -6,45 +6,42 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-
 class HomeviewBody extends StatelessWidget {
   const HomeviewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    return const CustomScrollView(slivers: [SliverToBoxAdapter(
-      
-    
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
-            child: CustomAppBar(),
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: CustomAppBar(),
+              ),
+              FeatureedBookListView(),
+              SizedBox(
+                height: 50,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: Text("Best Seller", style: Styles.textstyle18),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+            ],
           ),
-          FeatureedBookListView(),
-          SizedBox(height: 50,),
-          Padding(
+        ),
+        SliverFillRemaining(
+          child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
-            child: Text("Best Seller",style: Styles.textstyle18),
+            child: BestSellerListView(),
           ),
-          SizedBox(height: 20,),
-          
-      ],),
-    ),
-    SliverFillRemaining(child: Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
-      child: BestSellerListView(),
-    ),)
-    ],);
+        )
+      ],
+    );
   }
 }
-
-
-
-
-
-
-
-

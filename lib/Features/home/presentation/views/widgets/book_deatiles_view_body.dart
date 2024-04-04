@@ -1,4 +1,3 @@
-
 import 'package:bookly/Features/home/presentation/views/widgets/book_deatiles_view_Reating_section.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/books_similer_list_view.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_book_item.dart';
@@ -28,7 +27,7 @@ class BookDeatilesViewBody extends StatelessWidget {
                   child: const CustomBookimage(),
                 ),
                 const Expanded(
-                    child:  SizedBox(
+                    child: SizedBox(
                   height: 43,
                 )),
                 const Text(
@@ -56,5 +55,3 @@ class BookDeatilesViewBody extends StatelessWidget {
     ]);
   }
 }
-
-
