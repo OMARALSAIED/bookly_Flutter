@@ -6,7 +6,6 @@ import 'package:bookly/Features/home/presentation/views/widgets/cutom_deatiles_a
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 
@@ -16,7 +15,12 @@ class BookDeatilesViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width=MediaQuery.of(context).size.width;
-    return  Padding(
+
+    return CustomScrollView(
+      
+      slivers: [SliverFillRemaining(
+        hasScrollBody: false,
+        child: Padding(
       padding:const  EdgeInsets.symmetric(horizontal:20,vertical: 15),
       child: Column(children: [
         const  CustomAppbarBookDeatiles(),
@@ -24,7 +28,7 @@ class BookDeatilesViewBody extends StatelessWidget {
            padding: EdgeInsets.symmetric(horizontal: width * .2),
            child:const CustomBookimage(),
          ),
-         const SizedBox(height: 43,),
+      const  Expanded(child: const SizedBox(height: 43,)),
       const  Text('The Jungel Book',style: Styles.textstyle30,),
      const SizedBox(height: 6,),
       Opacity(
@@ -43,7 +47,9 @@ class BookDeatilesViewBody extends StatelessWidget {
         const SimilaerBookListView(),
         
       ],),
-    );
+    ))
+      ]);
+    
   }
 }
 
