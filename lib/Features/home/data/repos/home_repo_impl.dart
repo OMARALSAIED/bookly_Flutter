@@ -8,6 +8,8 @@ import 'package:dio/dio.dart';
 class HomeRepoImpl implements HomeRepo
 {
   late  ApiService apiService;
+
+  HomeRepoImpl(ApiService apiService);
   
   @override
   Future<Either<Failure, List<BooksModel>>> fetchNewsBooks()async {
