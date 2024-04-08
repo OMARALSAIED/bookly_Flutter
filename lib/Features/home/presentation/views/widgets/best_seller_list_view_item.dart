@@ -17,7 +17,7 @@ final BooksModel booksModel;
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDeatilesView);
+        GoRouter.of(context).push(AppRouter.kBookDeatilesView,extra: booksModel);
       },
       child: SizedBox(
         height: 120,
