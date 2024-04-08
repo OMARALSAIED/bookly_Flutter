@@ -9,6 +9,6 @@ class CustomErrorWidget extends StatelessWidget {
   // ignore: override_on_non_overriding_member
   final String errorMessage;
   Widget build(BuildContext context) {
-    return Text(errorMessage,style: Styles.textstyle18,);
+    return Center(child: Text(errorMessage,style: Styles.textstyle18,));
   }
 }
