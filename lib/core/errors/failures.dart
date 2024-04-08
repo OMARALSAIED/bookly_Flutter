@@ -30,7 +30,7 @@ class ServerFailure extends Failure{
        return ServerFailure('Request  to  Apiserver was canceld');
       case DioExceptionType.connectionError:
            
-        return ServerFailure('There is somthing with Connection  to  Apiserver');
+        return ServerFailure('There is somthing with Connection  to  Api Server');
       case DioExceptionType.unknown:
        if(dioException.message is SocketException) 
        
