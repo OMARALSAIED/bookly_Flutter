@@ -23,7 +23,7 @@ final BooksModel booksModel;
         height: 120,
         child: Row(
           children: [
-           CustomBookimage(imageUrl: booksModel.volumeInfo.imageLinks.thumbnail),
+           CustomBookimage(imageUrl: booksModel.volumeInfo.imageLinks?.thumbnail??''),
             const SizedBox(
               width: 30,
             ),
@@ -58,7 +58,7 @@ final BooksModel booksModel;
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
-                     BookRating()
+                    const BookRating()
                     ],
                   )
                 ],
