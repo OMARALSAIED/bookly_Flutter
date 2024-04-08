@@ -21,8 +21,8 @@ class _BookDeatilesViewState extends State<BookDeatilesView> {
   }
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: BookDeatilesViewBody(),
+    return  Scaffold(
+      body: BookDeatilesViewBody(booksModel: widget.booksModel,),
     );
   }
 }

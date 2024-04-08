@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/data/models/books_model/books_model.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/book_deatiles_view_Reating_section.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/books_similer_list_view.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_book_item.dart';
@@ -8,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class BookDeatilesViewBody extends StatelessWidget {
-  const BookDeatilesViewBody({super.key});
-
+  const BookDeatilesViewBody({super.key, required this.booksModel});
+final BooksModel booksModel;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -24,14 +25,15 @@ class BookDeatilesViewBody extends StatelessWidget {
                 const CustomAppbarBookDeatiles(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * .2),
-                  child: const CustomBookimage(imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOM_W17Wxxau2CJpTQP65JBz8b_HOdbsAG1w&s',),
+                  child:  CustomBookimage(imageUrl:booksModel.volumeInfo.imageLinks?.thumbnail??'' ,),
                 ),
                 const Expanded(
                     child: SizedBox(
                   height: 43,
                 )),
-                const Text(
-                  'The Jungel Book',
+                 Text(
+                  textAlign: TextAlign.center,
+                  booksModel.volumeInfo.title!,
                   style: Styles.textstyle30,
                 ),
                 const SizedBox(
@@ -40,7 +42,7 @@ class BookDeatilesViewBody extends StatelessWidget {
                 Opacity(
                     opacity: .7,
                     child: Text(
-                      'Rudyard Kip',
+                      booksModel.volumeInfo.authors![0],
                       style: Styles.textstyle16
                           .copyWith(fontStyle: FontStyle.italic),
                     )),
